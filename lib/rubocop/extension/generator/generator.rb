@@ -145,8 +145,10 @@ module RuboCop
             gem 'rspec'
           RUBY
 
+          # Bundler's generated README.md has had 2 styles of gem declarations.
+          # See: https://github.com/rubygems/rubygems/commit/c805e9b558
           if Gem::Version.new(Bundler::VERSION) >= Gem::Version.new('2.3.9')
-            patch 'README.md', /\$ bundle add (.*)$/, '$ bundle add \1 --require=false'
+            patch 'README.md', /^\s*(?:\$\s*)?bundle add[^\n]*$/, '\0 --require=false'
           else
             patch 'README.md', /^gem '#{name}'$/, "gem '#{name}', require: false"
           end
