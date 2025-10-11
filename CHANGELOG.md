@@ -1,5 +1,9 @@
 # master (unreleased)
 
+## v0.6.2
+
+* [#30](https://github.com/rubocop/rubocop-extension-generator/pull/30): Handle changes to the gem install declaration in Bundler's generated README.
+
 ## v0.6.1
 
 * [#28](https://github.com/rubocop/rubocop-extension-generator/pull/28): Prevent errors when internally using cops that rely on configuration options.
